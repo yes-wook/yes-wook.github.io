@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-permalink: /about/
+subtitle: 
 ---
 
 <b>Byeongki Jeong</b>  
@@ -15,6 +15,7 @@ A member of [KKTMLAB(Konkuk Technology Management Laboratory)](https://sites.goo
 
 ### Papers
 #### International
+<b>Jeong, B.</b>, & Yoon, J. (2017). Social media mining for product planning: a product opportunity mining approach based on topic modeling and sentiment analysis. International Journal of Information Management. [(weblink)](http://www.sciencedirect.com/science/article/pii/S0268401217302955)  
 <b>Jeong, B.</b>, & Yoon, J. (2017). Competitive Intelligence Analysis of Augmented Reality Technology Using Patent Information. Sustainability, 9(4), 497. [(weblink)](http://www.mdpi.com/2071-1050/9/4/497)  
 Song, C. H., Han, J. W., <b>Jeong, B.</b>, & Yoon, J. (2017). Mapping the Patent Landscape in the Field of Personalized Medicine. Journal of Pharmaceutical Innovation, 1-11. [(weblink)](https://link.springer.com/article/10.1007/s12247-017-9283-z)  
 
