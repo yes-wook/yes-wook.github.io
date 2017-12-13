@@ -55,5 +55,5 @@ Ko N., <b>Jeong B.</b>, & Yoon J. (2016). Product improvement opportunity analys
 <b>2012.09~2015.08</b>, 기술지능 기반의 차세대 제품-서비스 시스템 개발 접근 방법 (A technology intelligence-based approach for product-service systems development), <i>한국연구재단(NRF)</i>, Researcher  
 
 ### Contact me
-[jbk958(at)gmail.com](mailto:jbk958@gmail.com)
+[jbk958(at)gmail.com](mailto:jbk958@gmail.com)  
 [byeongkij(at)konkuk.ac.kr](mailto:byeongkij@konkuk.ac.kr)
