@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ARIMA, Python으로 하는 시계열분석
+title: ARIMA, Python으로 하는 시계열분석 (feat. 비트코인 가격예측)
 ---
   
 # 서론  
@@ -12,7 +12,8 @@ title: ARIMA, Python으로 하는 시계열분석
 - ARIMA의 간단한 개념  
 - ARIMA 모델의 파라미터 선정 방법  
 - 실제 데이터와 ARIMA 모델을 이용한 미래 예측  
-와 관련된 내용을 다룬다.  
+  
+등 과 관련된 내용을 다룬다.  
   
 # ARIMA(Autoregressive Integrated Moving Average)  
 ARIMA는 Autoregressive Integrated Moving Average의 약자로, Autoregressive는 자기회귀모형을 의미하고, Moving Average는 이동평균모형을 의미한다.  
