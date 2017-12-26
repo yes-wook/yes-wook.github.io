@@ -5,7 +5,7 @@ subtitle:
 ---
 
 <b>Byeongki Jeong</b>  
-A member of [KKTMLAB(Konkuk Technology Management Laboratory)](https://sites.google.com/site/kktmlab/)
+A member of [Business Intelligence and Data Analytics Laboratory @Konkuk university](https://sites.google.com/site/kkbizintelligence/)
 ### Education
 <b>Bachelor's degree</b> @Department of Industrial engineering, Konkuk university, 2011~2017  
 <b>Master's degree</b> @Department of Industrial engineering, Konkuk university, 2017~ongoing
@@ -14,7 +14,8 @@ A member of [KKTMLAB(Konkuk Technology Management Laboratory)](https://sites.goo
 <b>정병기</b>, 김정욱. (2016). 의미론적 융합 기술 분석 방법: 토픽모델링과 교차영향분석의 활용, 특허청장상, <i>제 11회 지식재산우수논문 공모전</i>, 특허청(KIPO)
 
 ### Papers
-#### International
+#### International  
+Ko, N., <b>Jeong, B.</b>, Choi, S., & Yoon, J. (2017). Identifying Product Opportunities Using Social Media Mining: Application of Topic Modeling and Chance Discovery Theory. IEEE Access. [(weblink)](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8166751)    
 <b>Jeong, B.</b>, & Yoon, J. (2017). Social media mining for product planning: a product opportunity mining approach based on topic modeling and sentiment analysis. International Journal of Information Management. [(weblink)](http://www.sciencedirect.com/science/article/pii/S0268401217302955)  
 <b>Jeong, B.</b>, & Yoon, J. (2017). Competitive Intelligence Analysis of Augmented Reality Technology Using Patent Information. Sustainability, 9(4), 497. [(weblink)](http://www.mdpi.com/2071-1050/9/4/497)  
 Song, C. H., Han, J. W., <b>Jeong, B.</b>, & Yoon, J. (2017). Mapping the Patent Landscape in the Field of Personalized Medicine. Journal of Pharmaceutical Innovation, 1-11. [(weblink)](https://link.springer.com/article/10.1007/s12247-017-9283-z)  
