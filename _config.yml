@@ -26,6 +26,7 @@ navbar-links:
   Home: "http://byeongkijeong.github.io/"
   About Me: "aboutme"
   Links:
+    - Github profile: "https://github.com/byeongkijeong"
     - Google scholar profile: "https://scholar.google.co.kr/citations?user=2ujXl3MAAAAJ"
     - Business intelligence lab: "https://sites.google.com/site/kkbizintelligence/"
 #  Resources:
