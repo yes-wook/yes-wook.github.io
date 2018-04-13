@@ -139,7 +139,7 @@ plt.show()
     
 
 
-![png](./img/post_img/2018-04-13-dimensionreduction/output_9_1.png)
+![png](/img/post_img/2018-04-13-dimensionreduction/output_9_1.png)
 
 
 #### Best example of PCA
@@ -178,7 +178,7 @@ plt.show()
     
 
 
-![png](./img/post_img/2018-04-13-dimensionreduction/output_11_1.png)
+![png](/img/post_img/2018-04-13-dimensionreduction/output_11_1.png)
 
 
 ### Singular value decomposition (SVD) and Latent semantic analysis (LSA)
@@ -245,7 +245,7 @@ fig_ori.axes.get_yaxis().set_visible(False)
 ```
 
 
-![png](./img/post_img/2018-04-13-dimensionreduction/output_16_0.png)
+![png](/img/post_img/2018-04-13-dimensionreduction/output_16_0.png)
 
 
 
@@ -266,7 +266,7 @@ plt.show()
 ```
 
 
-![png](./img/post_img/2018-04-13-dimensionreduction/output_17_0.png)
+![png](/img/post_img/2018-04-13-dimensionreduction/output_17_0.png)
 
 
 ### Non-negative matrix factorization (NMF)
@@ -428,5 +428,5 @@ plt.show()
 ```
 
 
-![png](./img/post_img/2018-04-13-dimensionreduction/output_25_0.png)
+![png](/img/post_img/2018-04-13-dimensionreduction/output_25_0.png)
 
