@@ -15,6 +15,7 @@ A member of [Business Intelligence and Data Analytics Laboratory @Konkuk univers
 
 ### Papers
 #### International  
+Yoon, J., <b>Jeong, B.</b>, Lee, W. H., & Kim, J. (2018). Tracing the evolving trends in electronic skin (e-skin) technology using growth curve and technology position-based patent bibliometrics. IEEE Access, 6(1), 26530-26542. [(Link)](https://ieeexplore.ieee.org/document/8358697/)    
 <b>Jeong, B.</b>, Lee, J. & Yoon, J. (2017). Social media mining for product planning: a product opportunity mining approach based on topic modeling and sentiment analysis. International Journal of Information Management, In press. [(Link)](http://www.sciencedirect.com/science/article/pii/S0268401217302955)  
 Ko, N., <b>Jeong, B.</b>, Choi, S., & Yoon, J. (2017). Identifying Product Opportunities Using Social Media Mining: Application of Topic Modeling and Chance Discovery Theory. IEEE Access, 6(1), 1680-1693. [(Link)](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8166751)    
 <b>Jeong, B.</b>, & Yoon, J. (2017). Competitive Intelligence Analysis of Augmented Reality Technology Using Patent Information. Sustainability, 9(4), 497. [(Link)](http://www.mdpi.com/2071-1050/9/4/497)  
