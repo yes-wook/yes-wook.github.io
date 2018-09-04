@@ -13,6 +13,9 @@ A member of [Business Intelligence and Data Analytics Laboratory @Konkuk univers
 ### Prize
 <b>정병기</b>, 김정욱. (2016). 의미론적 융합 기술 분석 방법: 토픽모델링과 교차영향분석의 활용, 특허청장상, <i>제 11회 지식재산우수논문 공모전</i>, 특허청(KIPO)
 
+### Patent
+<b>정병기</b>, 윤장혁, 최재웅, 이재민, 고병열, 권오진. 특허수명예측장치 및 그 동작 방법(DISCRIMINATION APPARATUS FOR PATENT LIFETIME, AND CONTROL METHOD THEREOF). 출원번호: 10-2018-0036811. 대한민국 특허청.  
+
 ### Papers
 #### International  
 Yoon, J., <b>Jeong, B.</b>, Lee, W. H., & Kim, J. (2018). Tracing the evolving trends in electronic skin (e-skin) technology using growth curve and technology position-based patent bibliometrics. IEEE Access, 6(1), 26530-26542. [(Link)](https://ieeexplore.ieee.org/document/8358697/)    
@@ -22,6 +25,7 @@ Ko, N., <b>Jeong, B.</b>, Choi, S., & Yoon, J. (2017). Identifying Product Oppor
 Song, C. H., Han, J. W., <b>Jeong, B.</b>, & Yoon, J. (2017). Mapping the Patent Landscape in the Field of Personalized Medicine. Journal of Pharmaceutical Innovation, 1-11. [(Link)](https://link.springer.com/article/10.1007/s12247-017-9283-z)  
 
 #### Domestic
+이지호, <b>정병기</b>, 고남욱, 오승현, & 윤장혁. (2018) 특허의 Problem-Solution 텍스트 마이닝을 활용한 기술경쟁정보 분석 방법 	지식재산연구. (In press)  
 이다혜, 최하영, <b>정병기</b>, & 윤장혁. (2018). 특허 텍스트마이닝을 활용한 바이오 연료 기술 모니터링. 지식재산연구, 13(1), 285-312. [(Link)](https://www.kiip.re.kr/journal/view.do?bd_gb=jor&bd_cd=1&bd_item=0&po_d_gb=&po_no=J00048&po_j_no=J00048&po_a_no=327)  
 <b>정병기</b>, 고남욱, 경진영, 최덕용, & 윤장혁. (2017). 장벽특허의 무효화 분석을 위한 선행특허기술 발굴 시스템 개발. Entrue Journal of Information Technology, 16(1), 97-108. [(Link)](www.entrue.com/Contents/DownLoadFile?FileName=%5B3-3%5DRN-2016-02-012_%EC%9C%A4%EC%9E%A5%ED%98%81_2%EA%B5%90_p_3.pdf)
 <b>정병기</b>, 김정욱, & 윤장혁. (2016). 융합기술의 동향분석을 위한 의미론적 특허분석 접근 방법. 지식재산연구, 11(4), 211-240. [(Link)](https://www.kiip.re.kr/journal/view.do?bd_gb=jor&bd_cd=1&bd_item=0&po_d_gb=&po_no=J00043&po_j_no=J00043&po_a_no=289)  
