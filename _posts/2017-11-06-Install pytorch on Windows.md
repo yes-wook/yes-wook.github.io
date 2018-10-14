@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Install pytorch on Windows
+comments: true
 ---
 
 # Pytorch  

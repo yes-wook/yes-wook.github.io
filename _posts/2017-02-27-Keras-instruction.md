@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Keras instruction
+comments: true
 ---
 
 Keras는 Theano와 Tensorflow를 기반으로 하는 고수준API(High-level API)입니다.

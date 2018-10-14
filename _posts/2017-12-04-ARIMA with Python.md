@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ARIMA, Python으로 하는 시계열분석 (feat. 비트코인 가격예측)
+comments: true
 ---
   
 # 서론  

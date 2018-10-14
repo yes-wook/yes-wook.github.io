@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Keras CNN tutorial
+comments: true
 ---
 
 본 글은 [Keras-tutorial-deep-learning-in-python](https://elitedatascience.com/keras-tutorial-deep-learning-in-python)의 내용을  

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: An introduction to textmining with python
+comments: true
 ---
   
 # 2018 Spring Data Analytics @Dept. of Industrial engineering

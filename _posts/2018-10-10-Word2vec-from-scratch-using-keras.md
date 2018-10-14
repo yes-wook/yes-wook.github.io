@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Word2vec from scratch using keras
+comments: true
 ---
 
 본 글에서는 Word2vec의 개녑을 간단히 알아보고, Keras 등을 이용하여 구현해보도록 하겠습니다.  
