@@ -47,6 +47,9 @@ Ko N., <b>Jeong B.</b>, & Yoon J. (2016). Product improvement opportunity analys
 김용현, <b>정병기</b>, & 윤장혁. (2015). 특허경영활동이 기업 경영성과에 미치는 영향에 관한 연구: 국내 의료기기 제조 기업을 중심으로. 대한산업공학회 춘계공동학술대회, 라마다호텔, 제주  
 
 ### Projects
+<b>2018.06~2021.05</b>, 소셜-기술 데이터 애널리틱스 기반의 비즈니스 발굴-평가-운영 체계 (Social-technical data analytics-based business intelligence for business discovery, evaluation and operation), <i>한국연구재단</i>, Researcher  
+<b>2018.06~2018.12</b>, 지식재산(IP) 가치평가 지원방안 연구(Study on automated process of intellectual property valuation), <i>기술보증기금</i>, Researcher  
+<b>2018.05~2018.12</b>, 근미래이슈 탐지를 위한 오픈데이터 유형탐색 및 분석모델 연구 (Exploration and analysis model development of open data sources for near future issue detection), <i>한국과학기술정보연구원</i>, Researcher  
 <b>2017.04~2018.03</b>, 기술역량기반 응용기술 후보 및 주요개발자 발굴 및 추천 시스템 (A system for discovering application technology candidates and their key researchers based on technological competence), <i>연구성과실용화진흥원</i>, Researcher  
 <b>2017.03~2017.10</b>, 제품혁신 지표 및 분석모형 개발 (Development of product innovation indexes and technology opportunity discovery models), <i>한국과학기술정보연구원(KISTI)</i>, Researcher  
 <b>2017.05~2017.07</b>, 특허자동평가 시스템 고도화 방안 연구 (A study on the advancement design of a patent evaluation system), <i>기술보증기금</i>, Researcher  
