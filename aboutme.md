@@ -5,6 +5,7 @@ subtitle:
 ---
 
 <b>Byeongki Jeong</b>  
+21세기의 대리석 속에 감춰진 형상을 꺼내주는 일을 합니다.  
 A member of [Business Intelligence and Data Analytics Laboratory @Konkuk university](https://sites.google.com/site/kkbizintelligence/)
 ### Education
 <b>Bachelor's degree</b> @Department of Industrial engineering, Konkuk university, 2011~2017  
