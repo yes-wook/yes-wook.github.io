@@ -5,11 +5,11 @@ subtitle:
 ---
 
 <b>Byeongki Jeong</b>  
-21세기의 대리석 속에 감춰진 형상을 꺼내주는 일을 합니다.  
+21세기에서, 대리석 속에 감춰진 형상을 꺼내주는 일을 합니다.  
 A member of [Business Intelligence and Data Analytics Laboratory @Konkuk university](https://sites.google.com/site/kkbizintelligence/)
 ### Education
 <b>Bachelor's degree</b> @Department of Industrial engineering, Konkuk university, 2011~2017  
-<b>Master's degree</b> @Department of Industrial engineering, Konkuk university, 2017~ongoing
+<b>Integrated Ph.D degree</b> @Department of Industrial engineering, Konkuk university, 2017~ongoing
 
 ### Prize
 <b>정병기</b>, 김정욱. (2016). 의미론적 융합 기술 분석 방법: 토픽모델링과 교차영향분석의 활용, 특허청장상, <i>제 11회 지식재산우수논문 공모전</i>, 특허청(KIPO)
@@ -20,7 +20,7 @@ A member of [Business Intelligence and Data Analytics Laboratory @Konkuk univers
 ### Papers
 #### International  
 Yoon, J., <b>Jeong, B.</b>, Lee, W. H., & Kim, J. (2018). Tracing the evolving trends in electronic skin (e-skin) technology using growth curve and technology position-based patent bibliometrics. IEEE Access, 6(1), 26530-26542. [(Link)](https://ieeexplore.ieee.org/document/8358697/)    
-<b>Jeong, B.</b>, Lee, J. & Yoon, J. (2017). Social media mining for product planning: a product opportunity mining approach based on topic modeling and sentiment analysis. International Journal of Information Management, In press. [(Link)](http://www.sciencedirect.com/science/article/pii/S0268401217302955)  
+<b>Jeong, B.</b>, Lee, J. & Yoon, J. (2018). Social media mining for product planning: a product opportunity mining approach based on topic modeling and sentiment analysis. International Journal of Information Management, In press. [(Link)](http://www.sciencedirect.com/science/article/pii/S0268401217302955)  
 Ko, N., <b>Jeong, B.</b>, Choi, S., & Yoon, J. (2017). Identifying Product Opportunities Using Social Media Mining: Application of Topic Modeling and Chance Discovery Theory. IEEE Access, 6(1), 1680-1693. [(Link)](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8166751)    
 <b>Jeong, B.</b>, & Yoon, J. (2017). Competitive Intelligence Analysis of Augmented Reality Technology Using Patent Information. Sustainability, 9(4), 497. [(Link)](http://www.mdpi.com/2071-1050/9/4/497)  
 Song, C. H., Han, J. W., <b>Jeong, B.</b>, & Yoon, J. (2017). Mapping the Patent Landscape in the Field of Personalized Medicine. Journal of Pharmaceutical Innovation, 1-11. [(Link)](https://link.springer.com/article/10.1007/s12247-017-9283-z)  
@@ -34,9 +34,10 @@ Song, C. H., Han, J. W., <b>Jeong, B.</b>, & Yoon, J. (2017). Mapping the Patent
 김용현, <b>정병기</b>, & 윤장혁. (2016). 특허경영활동이 기업 경영성과에 미치는 영향에 관한 연구: 국내 의료기기 제조 기업을 중심으로. 산업경영시스템학회지, 39(1), 1-8. [(Link)](http://www.ksie.or.kr/bbs/?bid=thesis&volumn=%C1%A639%B1%C7%20%C1%A61%C8%A3)  
 
 #### Conference
-<b>정병기</b>, & 윤장혁. (2016). 텍스트마이닝과 메타휴리스틱알고리즘 기반의 신규 특허 컨셉 개발 방법. 대한산업공학회 춘계공동학술대회, Expo Convention Center, 여수  
-고남욱, <b>정병기</b>, & 윤장혁. (2016). 특허거래정보를 활용한 IP평가모형: 딥뉴럴네트워크 접근. 대한산업공학회 춘계공동학술대회, Expo Convention Center, 여수  
-최재웅, <b>정병기</b>, & 윤장혁. (2016). 딥러닝을 활용한 특허수명 예측분석. 대한산업공학회 춘계공동학술대회, Expo Convention Center, 여수  
+<b>정병기</b>, & 윤장혁. (2018). Event Detection & Tracking 기반의 이머징 니즈 탐지 방법. 대한산업공학회 춘계공동학술대회, 현대호텔, 경주  
+<b>정병기</b>, & 윤장혁. (2017). 텍스트마이닝과 메타휴리스틱알고리즘 기반의 신규 특허 컨셉 개발 방법. 대한산업공학회 춘계공동학술대회, Expo Convention Center, 여수  
+고남욱, <b>정병기</b>, & 윤장혁. (2017). 특허거래정보를 활용한 IP평가모형: 딥뉴럴네트워크 접근. 대한산업공학회 춘계공동학술대회, Expo Convention Center, 여수  
+최재웅, <b>정병기</b>, & 윤장혁. (2017). 딥러닝을 활용한 특허수명 예측분석. 대한산업공학회 춘계공동학술대회, Expo Convention Center, 여수  
 <b>Jeong B.</b>, & Yoon J. (2016). Identifying product opportunities using topic modeling and sentiment analysis of social media data, APIEMS, Taipei  
 Ko N., <b>Jeong B.</b>, & Yoon J. (2016). Product improvement opportunity analysis based on text mining of online VOC: application of topic modeling and chance discovery theory, APIEMS, Taipei  
 <b>정병기</b>, 고남욱, & 윤장혁. (2016). 딥뉴럴네트워크 기반의 특허수명 예측모형 개발. 대한산업공학회 추계학술대회, 고려대학교, 서울  
