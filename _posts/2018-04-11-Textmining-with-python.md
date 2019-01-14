@@ -3,7 +3,7 @@ layout: post
 title: An introduction to textmining with python
 comments: true
 ---
-<출처 : https://byeongkijeong.github.io/>
+### 출처 : https://byeongkijeong.github.io/
 
 
 # 2018 Spring Data Analytics @Dept. of Industrial engineering
