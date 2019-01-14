@@ -14,10 +14,10 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Data sculptor
+title: Data Dreamer
 
 # Short description of your site
-description: Finding meaning under the data.
+description: Guides navigating the sea of data
 
 # --- Navigation bar options --- #
 
@@ -26,9 +26,9 @@ navbar-links:
   Home: "http://yes-wook.github.io/"
   About Me: "aboutme"
   Links:
-    - Github profile: "https://github.com/byeongkijeong"
-    - Google scholar profile: "https://scholar.google.co.kr/citations?user=2ujXl3MAAAAJ"
-    - Business intelligence lab: "https://sites.google.com/site/kkbizintelligence/"
+    - Github profile: "https://github.com/yes-wook"
+#    - Google scholar profile: "https://scholar.google.co.kr/citations?user=2ujXl3MAAAAJ"
+#    - Business intelligence lab: "https://sites.google.com/site/kkbizintelligence/"
 #  Resources:
 #    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
 #    - Learn markdown: "http://www.markdowntutorial.com/"
@@ -37,7 +37,7 @@ navbar-links:
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/profile_pic.png"
+avatar: "/img/profile.jpg"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -60,8 +60,8 @@ avatar: "/img/profile_pic.png"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Byeongki Jeong
-  email: "jbk958@gmail.com"
+  name: Jungwook Kim
+  email: "wjddnr0403@gmail.com"
 #  facebook: yourname  # eg. daattali
 #  github: yourname    # eg. daattali
 #  twitter: yourname   # eg. daattali
