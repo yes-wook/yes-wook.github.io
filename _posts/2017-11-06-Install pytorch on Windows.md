@@ -3,6 +3,7 @@ layout: post
 title: Install pytorch on Windows
 comments: true
 ---
+<출처 : https://byeongkijeong.github.io/>
 
 # Pytorch  
 Lua언어로 된 딥러닝 프레임워크인 Torch를 페이스북에서 Pythonic하게 만들어서 배포하는 파이썬용 딥러닝 프레임워크  
