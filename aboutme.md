@@ -5,7 +5,7 @@ subtitle:
 ---
 
 ### <b>Jungwook Kim</b>  
-데이터의 바다 위, 대항해시대의 길을 찾는 길잡이 
+데이터의 바다 위, 대항해시대의 길잡이 
 
 
 ### Education
@@ -15,6 +15,7 @@ subtitle:
 정병기, <b>김정욱</b>. (2016). 의미론적 융합 기술 분석 방법: 토픽모델링과 교차영향분석의 활용, 특허청장상, <i>제 11회 지식재산우수논문 공모전</i>, 특허청(KIPO)
 
 ### Papers
+
 #### Domestic
 정병기, <b>김정욱</b>, & 윤장혁. (2016). 융합기술의 동향분석을 위한 의미론적 특허분석 접근 방법. 지식재산연구, 11(4), 211-240. [(Link)](https://www.kiip.re.kr/journal/view.do?bd_gb=jor&bd_cd=1&bd_item=0&po_d_gb=&po_no=J00043&po_j_no=J00043&po_a_no=289)  
 <b>김정욱</b>, 정병기, & 윤장혁. (2016). 네트워크분석과 기술성장모형을 이용한 기술기획: 증강현실 기술의 특허를 활용하여. 대한산업공학회지, 42(5).  [(Link)](http://www.dbpia.co.kr/Journal/ArticleDetail/NODE07021833?TotalCount=1&Seq=1&q=%5B%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B6%84%EC%84%9D%EA%B3%BC%20%EA%B8%B0%EC%88%A0%EC%84%B1%EC%9E%A5%EB%AA%A8%ED%98%95%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EA%B8%B0%EC%88%A0%EA%B8%B0%ED%9A%8D%3A%20%EC%A6%9D%EA%B0%95%ED%98%84%EC%8B%A4%20%EA%B8%B0%EC%88%A0%EC%9D%98%20%ED%8A%B9%ED%97%88%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC%C2%A7coldb%C2%A72%C2%A751%C2%A73%5D&searchWord=%EC%A0%84%EC%B2%B4%3D%5E%24%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B6%84%EC%84%9D%EA%B3%BC%20%EA%B8%B0%EC%88%A0%EC%84%B1%EC%9E%A5%EB%AA%A8%ED%98%95%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EA%B8%B0%EC%88%A0%EA%B8%B0%ED%9A%8D%3A%20%EC%A6%9D%EA%B0%95%ED%98%84%EC%8B%A4%20%EA%B8%B0%EC%88%A0%EC%9D%98%20%ED%8A%B9%ED%97%88%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC%5E*&Multimedia=0&isIdentifyAuthor=0&Collection=0&SearchAll=%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B6%84%EC%84%9D%EA%B3%BC%20%EA%B8%B0%EC%88%A0%EC%84%B1%EC%9E%A5%EB%AA%A8%ED%98%95%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EA%B8%B0%EC%88%A0%EA%B8%B0%ED%9A%8D%3A%20%EC%A6%9D%EA%B0%95%ED%98%84%EC%8B%A4%20%EA%B8%B0%EC%88%A0%EC%9D%98%20%ED%8A%B9%ED%97%88%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC&isFullText=0&specificParam=0&SearchMethod=0&Sort=1&SortType=desc&Page=1&PageSize=20) 
