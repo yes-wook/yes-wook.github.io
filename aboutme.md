@@ -4,7 +4,7 @@ title: About me
 subtitle: 
 ---
 
-<b>Byeongki Jeong</b>  
+<b>Jungwook Kim</b>  
 21세기에서, 대리석 속에 감춰진 형상을 꺼내주는 일을 합니다.  
 A member of [Business Intelligence and Data Analytics Laboratory @Konkuk university](https://sites.google.com/site/kkbizintelligence/)
 ### Education
