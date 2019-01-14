@@ -3,6 +3,7 @@ layout: post
 title: Image denoising with Autoencoder in Keras
 comments: true
 ---
+<출처 : https://byeongkijeong.github.io/>
 
 본 글은 [building-autoencoders-in-keras](https://blog.keras.io/building-autoencoders-in-keras.html)의 내용을 참고하여 작성되었습니다.
 그림보다는 글과 코드 중심으로 작성되었으며, 최대한 상세하게 서술하겠지만 그림이 없어서 이해하기 어려울 수 있습니다.
