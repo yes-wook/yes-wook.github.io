@@ -3,6 +3,7 @@ layout: post
 title: Nearly everything of information theory
 comments: true
 ---
+<출처 : https://byeongkijeong.github.io/>
 
 그동안 대략적으로 느낌만 알고 있던 정보이론에 대해서, 공부하고 정리할 일이 생겼는데  
 생각보다 재밌는 개념이고 정리도 잘 된것 같아서 만든 ppt를 그대로 이미지로 첨부합니다.  
