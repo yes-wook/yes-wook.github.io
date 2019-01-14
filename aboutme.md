@@ -41,13 +41,10 @@ subtitle:
 -->
 
 <b>2015.03~2015.10</b>, 기술인지 모형 개발을 통한 제품 네트워크 구축 (Construction of product networks based on technology recognition models), <i>한국과학기술정보연구원(KISTI)</i>, Researcher  
-
-
 <!--
 <b>2014.12~2015.11</b>, 기업의 보유특허를 활용한 신기술기회 탐색 방법론: 인용정보기반 협업필터링의 적용 (A methodology to explore new technology opportunities based on firms' own patents), <i>건국대학교</i>, Researcher    
 <b>2014.03~2014.10</b>, 대용량 데이터 분석 기술 개발 (A Study on Big Data Analysis Technology), <i>한국과학기술정보연구원(KISTI)</i>, Researcher  
 -->
-
 <b>2012.09~2015.08</b>, 기술지능 기반의 차세대 제품-서비스 시스템 개발 접근 방법 (A technology intelligence-based approach for product-service systems development), <i>한국연구재단(NRF)</i>, Researcher 
 
 
