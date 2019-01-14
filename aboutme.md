@@ -4,9 +4,10 @@ title: About me
 subtitle: 
 ---
 
-<b>Jungwook Kim</b>  
-21세기에서, 대리석 속에 감춰진 형상을 꺼내주는 일을 합니다.  
-A member of [Business Intelligence and Data Analytics Laboratory @Konkuk university](https://sites.google.com/site/kkbizintelligence/)
+### <b>Jungwook Kim</b>  
+데이터의 바다 위, 대항해시대의 길을 찾는 길잡이 
+
+
 ### Education
 <b>Bachelor's degree</b> @Department of Industrial engineering, Konkuk university, 2011~2018  
 
