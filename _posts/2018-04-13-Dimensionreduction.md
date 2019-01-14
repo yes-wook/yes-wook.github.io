@@ -3,6 +3,7 @@ layout: post
 title: Dimension reduction with sci-kit learn
 comments: true
 ---
+<출처 : https://byeongkijeong.github.io/>
 
 # 2018 Spring Data Analytics @Dept. of Industrial engineering
 ## Dimension reduction
