@@ -3,7 +3,7 @@ layout: post
 title: An introduction to textmining with python
 comments: true
 ---
-### 출처 : https://byeongkijeong.github.io/
+
 
 
 # 2018 Spring Data Analytics @Dept. of Industrial engineering
@@ -314,4 +314,6 @@ print(response_json)
 ```
 
     {'usage': {'text_units': 1, 'text_characters': 64, 'features': 1}, 'language': 'ko', 'keywords': [{'text': '정부', 'sentiment': {'score': 0.0, 'label': 'neutral'}, 'relevance': 0.951}, {'text': '마스크', 'sentiment': {'score': 0.0, 'label': 'neutral'}, 'relevance': 0.926}, {'text': '방안', 'sentiment': {'score': 0.0, 'label': 'neutral'}, 'relevance': 0.904}, {'text': '학교 휴업', 'sentiment': {'score': 0.0, 'label': 'neutral'}, 'relevance': 0.884}, {'text': '현행 지침', 'sentiment': {'score': 0.0, 'label': 'neutral'}, 'relevance': 0.867}]}
-    
+
+
+### 출처 : https://byeongkijeong.github.io/
