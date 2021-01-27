@@ -3,7 +3,7 @@ layout: post
 title: Nearly everything of information theory
 comments: true
 ---
-### 출처 : https://byeongkijeong.github.io/
+
 
 그동안 대략적으로 느낌만 알고 있던 정보이론에 대해서, 공부하고 정리할 일이 생겼는데  
 생각보다 재밌는 개념이고 정리도 잘 된것 같아서 만든 ppt를 그대로 이미지로 첨부합니다.  
@@ -31,3 +31,6 @@ p.s 최근 딥러닝의 기본개념중 하나인 교차엔트로피(크로스 �
 ![f-divergence](/img/post_img/2018-07-28-information_theory/0015.jpg)  
 ![Kullback-Leibler divergence for model estimation](/img/post_img/2018-07-28-information_theory/0016.jpg)  
 ![cross entropy](/img/post_img/2018-07-28-information_theory/0017.jpg)  
+
+
+### 출처 : https://byeongkijeong.github.io/
