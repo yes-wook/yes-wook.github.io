@@ -3,9 +3,6 @@ layout: post
 title: Keras instruction
 comments: true
 ---
-<출처 : https://byeongkijeong.github.io/>
-
-
 Keras는 Theano와 Tensorflow를 기반으로 하는 고수준API(High-level API)입니다.
 물론 딥러닝의 알고리즘을 연구하시는 분들 께서는 C, C++ 등을 이용하여 직접 구현하시거나 
 Caffe, Tensorflow, Touch 등의 프레임워크를 이용하여 개발하실 것 입니다.
@@ -35,3 +32,6 @@ Caffe, Tensorflow, Touch 등의 프레임워크를 이용하여 개발하실 것
 제 작동환경은 윈도우 + GPU + Python3.5.2 + Anaconda 입니다.
 
 조만간 뵙겠습니다.
+
+
+<출처 : https://byeongkijeong.github.io/>
