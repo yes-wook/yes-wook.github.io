@@ -3,8 +3,6 @@ layout: post
 title: ARIMA, Python으로 하는 시계열분석 (feat. 비트코인 가격예측)
 comments: true
 ---
-### 출처 : https://byeongkijeong.github.io/
-
 # 서론  
 시계열 분석(Time series analysis)이란,  
 독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징이 있다. 독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요하다.  
@@ -217,3 +215,8 @@ array([[ 14064.19557878], [ 13303.94590548]]))
   
 ARIMA에 관해 통계적 기반이나 지식을 포함하여 더 알고싶다면 위에서 언급한 [Box, George; Jenkins, Gwilym (1970). Time Series Analysis: Forecasting and Control.](https://www.amazon.com/Time-Analysis-Forecasting-George-Box/dp/0470272848) 이나, 
 [Robert Nau @Duke university](http://people.duke.edu/~rnau/411home.htm)의 강의자료를 참고하면 좋다.  
+
+
+
+### 출처 : https://byeongkijeong.github.io/
+
