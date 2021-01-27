@@ -3,9 +3,6 @@ layout: post
 title: Word2vec from scratch using keras
 comments: true
 ---
-### 출처 : https://byeongkijeong.github.io/>
-
-
 본 글에서는 Word2vec의 개녑을 간단히 알아보고, Keras 등을 이용하여 구현해보도록 하겠습니다.  
 (그림은 없습니다...꾸준히 정성들여 그림 수식 다 넣어서 포스팅하시는분들 진짜 존경...)
 
@@ -446,3 +443,6 @@ if __name__ == "__main__":
     print("Done: overall process consumes\t{time} sec".format(time=time()-time_start))
 
 ```
+
+
+### 출처 : https://byeongkijeong.github.io/>
