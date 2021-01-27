@@ -3,7 +3,7 @@ layout: post
 title: Keras CNN tutorial
 comments: true
 ---
-<출처 : https://byeongkijeong.github.io/>
+
 
 본 글은 [Keras-tutorial-deep-learning-in-python](https://elitedatascience.com/keras-tutorial-deep-learning-in-python)의 내용을  
 제 상황에 맞게 수정하면서 CNN(Convolution neural network)을 만들어보는 예제이며,  
@@ -324,3 +324,6 @@ score = model.evaluate(X_test, Y_test, verbose=0)
 print(model.metrics_names)
 print(score)
 ```
+
+
+<출처 : https://byeongkijeong.github.io/>
