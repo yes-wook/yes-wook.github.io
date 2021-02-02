@@ -24,7 +24,7 @@ description: Guides navigating the sea of data
 # List of links in the navigation bar
 navbar-links:
   Home: "http://yes-wook.github.io/"
-  About Me: "About Me"
+  About Me: "aboutme"
   Links:
     - Github profile: "https://github.com/yes-wook"
 #    - Google scholar profile: "https://scholar.google.co.kr/citations?user=2ujXl3MAAAAJ"
