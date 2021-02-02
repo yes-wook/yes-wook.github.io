@@ -23,12 +23,10 @@ subtitle:
 정병기, <b>김정욱</b>, & 윤장혁. (2015). 토픽모델링을 활용한 증강현실기술의 특허경쟁정보분석. 대한산업공학회 추계학술대회, 연세대학교, 서울  
 <br>
 ### Projects
-<b>2020.08 ~ 2020.10</b>, 편의점 신선식품 발주자동화를 위한 데이터 분석, 데이터 분석 및 시각화
-<b>2020.05 ~ 2020.06</b>, 호텔 챗봇 시나리오 고도화 PoC, 데이터 분석 및 시각화
-<b>2019.02 ~ 2020.03</b>, AI기반 신제품 트렌드 예측 시스템 개발 및 운영, 자연어 분석 및 하둡 운영
-<b>2018.09 ~ 2019.01</b>, 물류 BPO 플랫폼 구축을 위한 사전 ISP 프로젝트, MDM 모듈 컨설팅
-
-
+<b>2020.08 ~ 2020.10</b>, 편의점 신선식품 발주자동화를 위한 데이터 분석, 데이터 분석 및 시각화  
+<b>2020.05 ~ 2020.06</b>, 호텔 챗봇 시나리오 고도화 PoC, 데이터 분석 및 시각화  
+<b>2019.02 ~ 2020.03</b>, AI기반 신제품 트렌드 예측 시스템 개발 및 운영, 자연어 분석 및 하둡 운영  
+<b>2018.09 ~ 2019.01</b>, 물류 BPO 플랫폼 구축을 위한 사전 ISP 프로젝트, MDM 모듈 컨설팅  
 <!--
 <b>2018.06~2021.05</b>, 소셜-기술 데이터 애널리틱스 기반의 비즈니스 발굴-평가-운영 체계 (Social-technical data analytics-based business intelligence for business discovery, evaluation and operation), <i>한국연구재단</i>, Researcher  
 <b>2018.06~2018.12</b>, 지식재산(IP) 가치평가 지원방안 연구(Study on automated process of intellectual property valuation), <i>기술보증기금</i>, Researcher  
@@ -44,7 +42,6 @@ subtitle:
 <b>2015.05~2016.04</b>,	특허활동이 기업의 경영성과에 미치는 영향에 관한 연구 (The effects of qualitative patenting activities on firm outcomes), <i>건국대학교</i>, Researcher  
 <b>2015.08~2015.10</b>, 특허 지능 방법론 연구: 텍스트 마이닝의 활용 (A patent intelligence methodology: application of text mining), <i>특허법인 해담</i>, Researcher  
 -->
-
 <b>2015.03~2015.10</b>, 기술인지 모형 개발을 통한 제품 네트워크 구축 (Construction of product networks based on technology recognition models), <i>한국과학기술정보연구원(KISTI)</i>, Researcher  
 <!--
 <b>2014.12~2015.11</b>, 기업의 보유특허를 활용한 신기술기회 탐색 방법론: 인용정보기반 협업필터링의 적용 (A methodology to explore new technology opportunities based on firms' own patents), <i>건국대학교</i>, Researcher    
