@@ -24,7 +24,7 @@ description: Guides navigating the sea of data
 # List of links in the navigation bar
 navbar-links:
   Home: "http://yes-wook.github.io/"
-  About Me: "aboutme"
+  About Me: "About Me"
   Links:
     - Github profile: "https://github.com/yes-wook"
 #    - Google scholar profile: "https://scholar.google.co.kr/citations?user=2ujXl3MAAAAJ"
@@ -61,9 +61,9 @@ avatar: "/img/20171209_150742.jpg"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Jungwook Kim
-  email: "wjddnr0403@gmail.com"
+  email: "yes_wook@naver.com"
 #  facebook: yourname  # eg. daattali
-#  github: yourname    # eg. daattali
+  github: yes-wook    # eg. daattali
 #  twitter: yourname   # eg. daattali
 #  reddit: yourname    # eg. daattali
 #  google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
@@ -109,14 +109,14 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "byeongkijeong.github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "yes-wook.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "byeongki_j"
+#disqus: "byeongki_j"
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-50390788-2"
+#google_analytics: "UA-50390788-2"
 
 # Google Tag Manager ID
 #gtm: ""
