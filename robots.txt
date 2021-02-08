@@ -1,0 +1,4 @@
+wUser-agent: *
+Allow: /
+
+Sitemap: http://yes-wook.github.io/sitemap.xml
