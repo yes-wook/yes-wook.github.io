@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: single
 title: Keras CNN tutorial
 comments: true
+legacy: true
 ---
 
 

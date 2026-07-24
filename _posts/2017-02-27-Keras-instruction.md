@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: single
 title: Keras instruction
 comments: true
+legacy: true
 ---
 Keras는 Theano와 Tensorflow를 기반으로 하는 고수준API(High-level API)입니다.
 물론 딥러닝의 알고리즘을 연구하시는 분들 께서는 C, C++ 등을 이용하여 직접 구현하시거나 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Nearly everything of information theory
 comments: true
 ---

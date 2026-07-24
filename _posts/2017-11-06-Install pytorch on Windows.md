@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: single
 title: Install pytorch on Windows
 comments: true
+legacy: true
 ---
 ### 출처 : https://byeongkijeong.github.io/
 

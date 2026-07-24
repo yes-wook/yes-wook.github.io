@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Delta Table 최적화: Optimize, Reorg, Z-Order, Bloom Filter, Liquid Clustering"
 subtitle: "Optimize, Reorg, Z-Order, Bloom Filter, Liquid Clustering"
 tags: [Delta Lake, Databricks, Optimization, Bloom Filter, Z-Order]

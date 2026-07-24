@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "CAST가 터졌다! Spark 4.0 업그레이드 후 생긴 문제와 해결법"
 subtitle: "CAST 동작 변화와 TRY_CAST 대응"
 tags: [Apache Spark, Spark 4.0, Databricks, Data Quality]

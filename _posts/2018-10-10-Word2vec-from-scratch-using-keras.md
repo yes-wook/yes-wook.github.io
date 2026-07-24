@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Word2vec from scratch using keras
 comments: true
 ---

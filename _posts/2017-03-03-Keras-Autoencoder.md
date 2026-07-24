@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: single
 title: Image denoising with Autoencoder in Keras
 comments: true
+legacy: true
 ---
 <출처 : https://byeongkijeong.github.io/>
 

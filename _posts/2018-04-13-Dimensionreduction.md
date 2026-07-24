@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Dimension reduction with sci-kit learn
 comments: true
 ---

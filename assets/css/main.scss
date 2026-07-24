@@ -1,0 +1,54 @@
+---
+---
+
+@import "minimal-mistakes/skins/air";
+@import "minimal-mistakes";
+
+:root {
+  --site-accent: #0f766e;
+  --site-ink: #17202a;
+  --site-muted: #5f6b76;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--site-ink);
+  font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.masthead__menu-item a,
+a {
+  &:hover {
+    color: var(--site-accent);
+  }
+}
+
+.page__content {
+  font-size: 1rem;
+  line-height: 1.9;
+
+  h2 {
+    margin-top: 2.2em;
+    border-bottom: 0;
+  }
+
+  code,
+  pre {
+    font-family: "JetBrains Mono", "D2Coding", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  pre {
+    border-left: 3px solid var(--site-accent);
+  }
+}
+
+.archive__item-title a {
+  color: var(--site-ink);
+}
+
+.author__bio {
+  color: var(--site-muted);
+}

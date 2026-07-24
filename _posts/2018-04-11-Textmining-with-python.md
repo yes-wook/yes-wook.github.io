@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: An introduction to textmining with python
 comments: true
 ---
