@@ -1,5 +1,6 @@
 ---
 layout: single
+legacy: true
 title: An introduction to textmining with python
 comments: true
 ---

@@ -1,5 +1,6 @@
 ---
 layout: single
+legacy: true
 title: Dimension reduction with sci-kit learn
 comments: true
 ---

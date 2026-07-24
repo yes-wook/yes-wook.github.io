@@ -28,3 +28,4 @@ classes: wide
 
 - [GitHub](https://github.com/yes-wook)
 - [Medium](https://medium.com/@yeswook)
+- [LinkedIn](https://www.linkedin.com/in/yeswook/)

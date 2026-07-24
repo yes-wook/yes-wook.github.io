@@ -23,7 +23,7 @@ breadcrumbs: false
 
 author:
   name: "김정욱"
-  avatar: "/img/profile_pic.png"
+  avatar: "/img/profile.jpg"
   bio: "Data Platform Engineer"
   location: "Seoul, Korea"
   links:
@@ -33,6 +33,9 @@ author:
     - label: "Medium"
       icon: "fab fa-fw fa-medium"
       url: "https://medium.com/@yeswook"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/yeswook/"
 
 include:
   - _pages

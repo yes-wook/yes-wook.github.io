@@ -1,5 +1,6 @@
 ---
 layout: single
+legacy: true
 title: Word2vec from scratch using keras
 comments: true
 ---

@@ -1,5 +1,6 @@
 ---
 layout: single
+legacy: true
 title: Nearly everything of information theory
 comments: true
 ---
