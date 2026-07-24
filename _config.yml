@@ -40,6 +40,7 @@ author:
 include:
   - _pages
 exclude:
+  - _archive
   - Gemfile
   - Gemfile.lock
   - node_modules
