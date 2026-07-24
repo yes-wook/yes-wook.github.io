@@ -21,9 +21,11 @@ classes: wide
 {% assign public_posts = site.posts | where_exp: "post", "post.legacy != true" %}
 {% if public_posts.size > 0 %}
 {% for post in public_posts limit: 10 %}
-### [{{ post.title }}]({{ post.url | relative_url }})
-
-{{ post.date | date: "%Y.%m.%d" }}{% if post.excerpt %} · {{ post.excerpt | strip_html | strip_newlines }}{% endif %}
+<article class="archive__item">
+  <h3 class="archive__item-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <p class="page__meta">{{ post.date | date: "%Y.%m.%d" }}</p>
+  {% if post.excerpt %}<p class="archive__item-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 | escape }}</p>{% endif %}
+</article>
 
 {% endfor %}
 {% else %}
