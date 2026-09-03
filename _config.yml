@@ -1,63 +1,96 @@
+theme: jekyll-theme-chirpy
+
+plugins:
+  - jekyll-redirect-from
+
+lang: ko-KR
+timezone: Asia/Seoul
+
 title: "정욱의 데이터 플랫폼 노트"
-description: "Data Platform Engineer의 데이터 플랫폼, 파이프라인, Delta Lake 운영 기록"
+tagline: "Data Platform Engineer"
+description: >-
+  Data Platform Engineer의 데이터 플랫폼, 파이프라인, Delta Lake 운영 기록
+
 url: "https://yes-wook.github.io"
 baseurl: ""
-repository: "yes-wook/yes-wook.github.io"
-locale: "ko-KR"
-timezone: "Asia/Seoul"
 
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "air"
-plugins:
-  - jekyll-include-cache
-  - jekyll-feed
-  - jekyll-sitemap
+# DO NOT modify this unless you are confident enough to update the code of all other post links.
+permalink: /posts/:title/
 
-markdown: kramdown
-highlighter: rouge
-permalink: /:title/
-paginate: 10
-paginate_path: /page:num/
-search: false
-breadcrumbs: false
+github:
+  username: yes-wook
 
-author:
+social:
   name: "김정욱"
-  avatar: "/img/profile.jpg"
-  bio: "Data Platform Engineer"
-  location: "Seoul, Korea"
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/yes-wook"
-    - label: "Medium"
-      icon: "fab fa-fw fa-medium"
-      url: "https://medium.com/@yeswook"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/yeswook/"
+    - https://github.com/yes-wook
+    - https://www.linkedin.com/in/yeswook/
 
-include:
-  - _pages
+avatar: "/img/profile.jpg"
+
+toc: true
+
+comments:
+  provider: giscus
+  giscus:
+    repo: "yes-wook/yes-wook.github.io"
+    repo_id: "" # https://giscus.app 에서 발급받아 채우기
+    category: "Comments"
+    category_id: "" # https://giscus.app 에서 발급받아 채우기
+    mapping: pathname
+    strict: "0"
+    input_position: bottom
+    lang: ko
+    reactions_enabled: "1"
+
+paginate: 10
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+defaults:
+  - scope:
+      path: "" # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
 exclude:
   - _archive
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
-
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-  - scope:
-      path: "_pages"
-    values:
-      layout: single
-      author_profile: false
