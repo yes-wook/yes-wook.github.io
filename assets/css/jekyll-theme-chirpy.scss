@@ -27,3 +27,19 @@ pre,
 code {
   font-family: "JetBrains Mono", "D2Coding", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+/* Gray code-block background for plain <pre> blocks that aren't
+   wrapped in Chirpy's rouge `.highlight` (e.g. posts with raw HTML) */
+.content pre {
+  background-color: var(--highlight-bg-color);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.content .highlight pre {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+}
