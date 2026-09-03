@@ -1,16 +1,21 @@
 ---
-layout: single
-title: "About"
-permalink: /about/
-author_profile: true
-classes: wide
+icon: fas fa-info-circle
+order: 4
 ---
+
+**김정욱** · Data Platform Engineer · Seoul, Korea
 
 ## 안녕하세요, 김정욱입니다
 
 데이터가 팀의 의사결정과 제품의 운영을 안정적으로 뒷받침하도록 만드는 **Data Platform Engineer**입니다.
 
 데이터 파이프라인을 만들 때는 적재 성공만 보지 않습니다. 데이터가 어디에서 왔는지 설명할 수 있는지, 실패했을 때 다시 실행할 수 있는지, 권한과 비용을 통제할 수 있는지, workload가 달라졌을 때 성능 판단을 다시 할 수 있는지를 함께 설계합니다.
+
+## Core areas
+
+- **Lakehouse** — Delta Lake, Spark, Databricks, 파일·테이블 레이아웃 최적화
+- **Data pipelines** — 증분 적재, MERGE, streaming, 재처리와 실패 복구
+- **Platform operations** — 권한, 비용, 관측성, 문서화와 셀프서비스
 
 ## 관심 분야
 

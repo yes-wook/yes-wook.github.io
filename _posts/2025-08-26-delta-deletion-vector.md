@@ -1,9 +1,10 @@
 ---
-layout: single
 title: "Delta Table의 Deletion Vector: 효율적인 삭제와 운영 전략"
 subtitle: "효율적인 삭제와 운영 전략"
 tags: [Delta Lake, Deletion Vector, Databricks, Data Engineering]
 comments: true
+redirect_from:
+  - /delta-deletion-vector/
 ---
 
 
