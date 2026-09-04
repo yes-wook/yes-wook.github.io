@@ -6,10 +6,10 @@ plugins:
 lang: ko-KR
 timezone: Asia/Seoul
 
-title: "정욱의 데이터 플랫폼 노트"
-tagline: "Data Platform Engineer"
+title: "Yes, Wook"
+tagline: "일도 낭만도 예스"
 description: >-
-  Data Platform Engineer의 데이터 플랫폼, 파이프라인, Delta Lake 운영 기록
+  데이터 플랫폼 엔지니어 김정욱이 일과 낭만, 그 사이의 기록을 남기는 공간입니다
 
 url: "https://yes-wook.github.io"
 baseurl: ""
@@ -34,9 +34,9 @@ comments:
   provider: giscus
   giscus:
     repo: "yes-wook/yes-wook.github.io"
-    repo_id: "" # https://giscus.app 에서 발급받아 채우기
-    category: "Comments"
-    category_id: "" # https://giscus.app 에서 발급받아 채우기
+    repo_id: "MDEwOlJlcG9zaXRvcnkxNjU2MDQ0Nzk="
+    category: "Announcements"
+    category_id: "DIC_kwDOCd7sf84DE2BG"
     mapping: pathname
     strict: "0"
     input_position: bottom
