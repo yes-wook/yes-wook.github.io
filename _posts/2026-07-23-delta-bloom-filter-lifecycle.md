@@ -11,6 +11,11 @@ comments: true
 
 대용량 Delta 테이블 조회를 빠르게 만들어보려고 Bloom Filter를 적용했다가, 나중에 다시 제거한 이야기입니다. 작년에는 1~3건 point lookup에서 제한적인 성능 향상을 확인해 그 범위에 적용했습니다. 다만 다건 조회와 조인에서는 개선 폭이 작았고, 비교 시점마다 테이블의 데이터량·파일 구성·정렬 상태도 달랐습니다. 이후에도 계속 확신이 서지 않아 올해 초 같은 조건에서 다시 점검했습니다. 작년에는 Bloom Filter 유무와 관계없이 Photon 사용 양상이 같아 문제가 되지 않았지만, 올해 재검증에서는 Bloom Filter가 Photon 경로를 막고 있었습니다. 한 달 뒤 공식 문서를 다시 확인하니 Bloom Filter는 deprecated 처리되어 Predictive I/O로 대체된 상태였습니다. 이론적으로 나아질 것 같은 기능도 적용 시점의 조건과 엔진 변화를 함께 보며 재검증해야 한다는 것을 다시 확인한 경험이었습니다.
 
+<figure>
+  <img src="{{ '/assets/img/posts/delta-bloom-filter-lifecycle/lifecycle-timeline.png' | relative_url }}" alt="2025년 Bloom Filter 적용부터 2026년 같은 조건 재검증과 공식 문서 확인까지의 타임라인" width="1440" height="1823">
+  <figcaption>그림 1. 작년의 제한적인 적용 판단과 올해의 재검증은 서로 다른 엔진 환경에서 이뤄졌습니다.</figcaption>
+</figure>
+
 ## 1. Bloom Filter를 왜 붙였었나
 
 대용량 로그 테이블을 다루다 보면, 특정 사용자나 기기 식별자로 찾아야 하는 조회가 종종 느리게 나옵니다. 날짜 파티션만으로는 이런 조회에서 파일 스킵이 잘 안 되는 경우가 있어서, 뭔가 더 빠르게 만들 방법이 없을까 찾아보다가 Bloom Filter를 알게 됐습니다.
@@ -48,7 +53,10 @@ Bloom Filter는 행을 직접 줄여주는 기능은 아니고, "이 파일엔 �
 - 전체 실행시간의 대부분은 파일을 다시 쓰는 시간이 아니라 **삭제할 대상을 찾느라 스캔하는 시간**이었습니다 (스캔은 50분대, 재작성은 5초도 안 걸림)
 - 실제로 물리적으로 지워진 행은 0건 — 삭제는 Deletion Vector로만 반영됨
 
-<!-- 스크린샷 자리 ①: EXPLAIN FORMATTED DELETE 실행계획에서 bytes/files before·after skipping이 동일하게 나온 부분 (테이블·스키마명은 캡처 전에 가려주세요) -->
+<figure>
+  <img src="{{ '/assets/img/posts/delta-bloom-filter-lifecycle/delete-workload.png' | relative_url }}" alt="삭제 워크로드의 시간 분포. 대상 탐색과 스캔은 50분대, Deletion Vector 반영은 5초 미만이며 Bloom Filter 유무에 따른 파일과 바이트 프루닝 차이는 없다" width="1440" height="1350">
+  <figcaption>그림 2. 삭제 작업의 병목은 재작성이 아니라 삭제 대상을 찾기 위한 스캔이었습니다.</figcaption>
+</figure>
 
 Bloom Filter가 있어도 삭제 워크로드의 파일·바이트 pruning에는 아무 차이가 없었습니다. 삭제가 느린 건 애초에 "대상이 어느 파티션에 있는지 미리 좁히기 어려운" scan-heavy한 구조 자체가 원인이었고, Bloom Filter를 뺀다고 더 빨라지지도 않았습니다 — **삭제 쪽에서는 있어도 없어도 그냥 중립**이었습니다.
 
@@ -61,8 +69,6 @@ Bloom Filter가 있어도 삭제 워크로드의 파일·바이트 pruning에는
 - Bloom Filter 적용 시: `Scan parquet with Bloom Filters ...` 경로를 타면서, Photon explanation에 `Photon scan does not support data sources with bloom filter indexes`가 그대로 찍혔습니다.
 - Bloom Filter 제거 시: `PhotonScan parquet ...`로 바뀌고, 조건 필터는 똑같이 반영됐습니다.
 
-<!-- 스크린샷 자리 ②: Bloom Filter 적용 시/제거 시 EXPLAIN 결과 나란히 비교 (Photon scan does not support... 문구가 보이는 부분) -->
-
 실측 결과도 같은 방향을 가리켰습니다.
 
 - Files read / Files pruned / Partitions read / Bytes pruned는 Bloom Filter 유무와 **동일** — 추가로 걸러지는 게 없었습니다.
@@ -70,7 +76,10 @@ Bloom Filter가 있어도 삭제 워크로드의 파일·바이트 pruning에는
 - Rows read: 적용 시 수억 건대 → 제거 시 수천 건대로 뚝 떨어짐
 - 실행시간: 단건 조회 약 1분25초 → 약 45초, 소건(3개) 조회 약 1분10초 → 약 30초대로 개선
 
-<!-- 스크린샷 자리 ③: Query History에서 Bloom Filter 적용/제거 실행시간·Photon 사용률 비교 그래프 -->
+<figure>
+  <img src="{{ '/assets/img/posts/delta-bloom-filter-lifecycle/query-comparison.png' | relative_url }}" alt="2026년 동일 조건 비교. Bloom Filter 유지 시 Photon 사용 비중은 1에서 2퍼센트이고 단건 실행시간은 약 85초, 제거 시 Photon 사용 비중은 99퍼센트이고 단건 실행시간은 약 45초다. 파일 프루닝 지표는 동일하다" width="1440" height="1989">
+  <figcaption>그림 3. 파일 프루닝 지표는 같았지만, Bloom Filter 제거 뒤에는 Photon 실행 경로를 사용할 수 있었습니다.</figcaption>
+</figure>
 
 작년의 제한적인 성능 향상 관측이 틀렸다는 뜻은 아니었습니다. 다만 당시에는 Bloom Filter 유무와 관계없이 Photon 사용 양상이 같았고, Predictive I/O 최적화 경로가 거의 활용되지 않았습니다. Bloom Filter가 Photon의 이점을 가로막는 문제는 그때는 없었던 것입니다.
 
