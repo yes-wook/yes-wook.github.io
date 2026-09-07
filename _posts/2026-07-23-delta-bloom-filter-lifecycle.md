@@ -90,7 +90,7 @@ Bloom Filter가 있어도 삭제 워크로드의 파일·바이트 pruning에는
 
 <figure class="visual-diagram">
   <img src="{{ '/assets/img/posts/delta-bloom-filter-lifecycle/query-comparison.png' | relative_url }}" alt="2026년 동일 조건 비교. Bloom Filter 유지 시 Photon 사용 비중은 1에서 2퍼센트이고 단건 실행시간은 약 85초, 제거 시 Photon 사용 비중은 99퍼센트이고 단건 실행시간은 약 45초다. 파일 프루닝 지표는 동일하다" width="1440" height="1989">
-  <figcaption>그림 3. 파일 프루닝 지표는 같았지만, Bloom Filter 제거 뒤에는 Photon 실행 경로를 사용할 수 있었습니다.</figcaption>
+  <figcaption>그림 3. 파일 프루닝은 같고, Photon 경로만 달랐습니다.</figcaption>
 </figure>
 
 **파일 프루닝 지표와 Photon 실행 경로가 달랐습니다.**
