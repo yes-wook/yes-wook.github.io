@@ -17,7 +17,7 @@ comments: true
 
 <figure class="visual-diagram">
   <img src="{{ '/assets/img/posts/delta-bloom-filter-lifecycle/lifecycle-timeline.png' | relative_url }}" alt="2025년 Bloom Filter 적용부터 2026년 같은 조건 재검증과 공식 문서 확인까지의 타임라인" width="1440" height="1823">
-  <figcaption>그림 1. 작년의 제한적인 적용 판단과 올해의 재검증은 서로 다른 엔진 환경에서 이뤄졌습니다.</figcaption>
+  <figcaption>그림 1. 엔진 환경 변화에 따른 재검증</figcaption>
 </figure>
 
 ## 1. Bloom Filter를 왜 붙였었나
@@ -65,7 +65,7 @@ Bloom Filter는 행을 직접 줄여주는 기능은 아니고, "이 파일엔 �
 
 <figure class="visual-diagram">
   <img src="{{ '/assets/img/posts/delta-bloom-filter-lifecycle/delete-workload.png' | relative_url }}" alt="삭제 워크로드의 시간 분포. 대상 탐색과 스캔은 50분대, Deletion Vector 반영은 5초 미만이며 Bloom Filter 유무에 따른 파일과 바이트 프루닝 차이는 없다" width="1440" height="1350">
-  <figcaption>그림 2. 삭제 작업의 병목은 재작성이 아니라 삭제 대상을 찾기 위한 스캔이었습니다.</figcaption>
+  <figcaption>그림 2. 삭제 작업의 병목: 대상 탐색 스캔</figcaption>
 </figure>
 
 Bloom Filter가 있어도 삭제 워크로드의 파일·바이트 pruning에는 아무 차이가 없었습니다. 삭제가 느린 건 애초에 "대상이 어느 파티션에 있는지 미리 좁히기 어려운" scan-heavy한 구조 자체가 원인이었고, Bloom Filter를 뺀다고 더 빨라지지도 않았습니다.
