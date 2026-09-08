@@ -9,7 +9,7 @@ redirect_from:
 
 > **2026년 갱신**: 이 글에서 운영 적용을 권장했던 Bloom Filter는 이후 Databricks 공식 deprecated 처리와 자체 재검증을 거쳐 제거했습니다. 원문은 당시 판단 기록으로 남겨두고, 바뀐 부분만 취소선과 괄호로 표시했습니다. 자세한 경과는 [Delta Lake Bloom Filter: 적용보다 제거가 나았던 이유](/posts/delta-bloom-filter-lifecycle/)를 참고해주세요.
 
-<p>Delta Lake 기반 환경을 운영하다 보면 작은 파일 증가, DV 누적, 특정 조건 검색 지연 같은 문제가 반복됩니다.<br>이를 해결하기 위해 제공되는 대표 기능은 <strong>Optimize, Reorg, Z-Order, Bloom Filter, Liquid Clustering</strong>입니다.</p><h3>1) Optimize (Bin-Packing)</h3><h4><strong>개념</strong></h4><p>작은 파일을 병합하여 적정 크기의 파일로 만드는 과정입니다.<br>이 과정에서 DV(Deletion Vector)가 적용된 파일도 새로 작성되면서 정리 효과가 나타납니다.</p><h4><strong>특징</strong></h4><ul><li><strong>Small File Problem</strong> 해소</li><li>Bin-Packing으로 파일 크기 균일화 (권장 target size: 약 1GB )</li><li>Optimize는 새로운 데이터를 추가하는 작업이 아님 → 로그에 dataChange=false로 기록됨<br>| 즉, <strong>파일만 바뀌었을 뿐 데이터 내용은 동일<br></strong>| downstream 증분 파이프라인이 같은 데이터를 <strong>다시 처리하지 않음</strong></li><li>파티션 단위로 범위 지정 가능 → 불필요한 비용 방지</li></ul><h4><strong>그림</strong></h4>
+<p>Delta Lake 기반 환경을 운영하다 보면 작은 파일 증가, DV 누적, 특정 조건 검색 지연 같은 문제가 반복됩니다.<br>이를 해결하기 위해 제공되는 대표 기능은 <strong>Optimize, Reorg, Z-Order, Bloom Filter, Liquid Clustering</strong>입니다.</p><h3>1) Optimize (Bin-Packing)</h3><h4><strong>개념</strong></h4><p>작은 파일을 병합하여 적정 크기의 파일로 만드는 과정입니다.<br>이 과정에서 재작성 대상으로 선택된 파일에는 DV(Deletion Vector)의 삭제 내용도 반영됩니다. 다만 모든 DV의 물리적 반영을 보장하지는 않습니다.</p><h4><strong>특징</strong></h4><ul><li><strong>Small File Problem</strong> 해소</li><li>Bin-Packing으로 파일 크기 균일화 (권장 target size: 약 1GB )</li><li>Optimize는 새로운 데이터를 추가하는 작업이 아님 → 로그에 dataChange=false로 기록됨<br>| 즉, <strong>파일만 바뀌었을 뿐 데이터 내용은 동일<br></strong>| downstream 증분 파이프라인이 같은 데이터를 <strong>다시 처리하지 않음</strong></li><li>파티션 단위로 범위 지정 가능 → 불필요한 비용 방지</li></ul><h4><strong>그림</strong></h4>
 ```text
 ## _before_
 part-00011.parquet (50MB)
@@ -17,7 +17,7 @@ part-00012.parquet (60MB)
 part-00013.parquet (45MB)
 
 ## _after_
-part-00100.parquet (~1GB) ← 병합 + DV 정리
+part-00100.parquet ← 병합 + DV 정리
 ```
 
 <p><strong>운영 팁</strong></p><ul><li>eg. 매일 새벽, 최근 7일만 Optimize → 비용 절감</li><li>eg. 매월 신규 파티션만 Optimize</li></ul><h3>2) Reorg (File Compaction)</h3><h4><strong>개념</strong></h4><p>DV가 누적된 특정 파일만 강제로 재작성하는 기능.</p><h4><strong>특징</strong></h4><ul><li>파일 단위 대상</li><li><strong>DV 정리</strong>에 집중</li><li><strong>Row Group 단위</strong></li></ul><h4><strong>그림</strong></h4>
@@ -29,7 +29,7 @@ part-00001.parquet + DV(bin: g1, g2, g3)
 part-00021.parquet (DV 반영, 정리 완료)
 ```
 
-<h4>운영 팁</h4><ul><li>DV 비율이 높은 파티션에만 선별 적용</li><li>비용이 크므로 전체 테이블 주기 실행은 지양</li></ul><h3>3) Z-Order Clustering</h3><h4><strong>개념</strong></h4><p>여러 컬럼을 기준으로 데이터를 물리적으로 근접하게 배치하는 기법.<br>Range/IN 조건 검색 성능을 크게 개선합니다.</p><h4><strong>특징</strong></h4><ul><li>Range/IN 조건 성능 향상</li><li>Equality 조건에서는 효과 제한적</li><li>Z-Order는 Optimize 실행 시 내부적으로 <strong>파일 병합 + 행 순서 재배치</strong></li><li>행 재배치는 <strong>Row Group 단위</strong></li></ul><h4>동작 방식</h4><p><strong>1/ 파티션 경계는 그대로 유지</strong></p><ul><li>Z-Order는 파티션 스키마(예: date_ym=&#39;2025-09&#39;)를 변경하지 않습니다.</li><li>파티션 디렉토리 구조는 그대로 남습니다.</li></ul><p><strong>2/ 파티션 내부 파일을 다시 씀</strong></p><ul><li>같은 파티션에 속한 여러 작은 파일들을 <strong>합치거나(bin-packing)</strong>,</li><li>큰 파일이라도 <strong>행 순서를 재배치(Z-curve)</strong>하면서 다시 씁니다.</li><li>즉, <em>“파일 재구성 + 행 재배치”</em> 단계가 동시 발생.</li></ul><p><strong>3/ Row Group 최적화</strong></p><ul><li>min/max 범위가 좁아져, file skipping강화됨</li></ul><h4><strong>그림</strong></h4>
+<h4>운영 팁</h4><ul><li>DV 비율이 높은 파티션에만 선별 적용</li><li>비용이 크므로 전체 테이블 주기 실행은 지양</li></ul><h3>3) Z-Order Clustering</h3><h4><strong>개념</strong></h4><p>여러 컬럼을 기준으로 데이터를 물리적으로 근접하게 배치하는 기법.<br>Range/IN 조건 검색 성능을 크게 개선합니다.</p><h4><strong>특징</strong></h4><ul><li>Range/IN 조건 성능 향상</li><li>Equality 조건에도 효과가 있을 수 있으며, 데이터 배치·통계·조건의 선택도에 따라 달라짐</li><li>Z-Order는 Optimize 실행 시 내부적으로 <strong>파일 병합 + 행 순서 재배치</strong></li><li>행 재배치는 <strong>Row Group 단위</strong></li></ul><h4>동작 방식</h4><p><strong>1/ 파티션 경계는 그대로 유지</strong></p><ul><li>Z-Order는 파티션 스키마(예: date_ym=&#39;2025-09&#39;)를 변경하지 않습니다.</li><li>파티션 디렉토리 구조는 그대로 남습니다.</li></ul><p><strong>2/ 파티션 내부 파일을 다시 씀</strong></p><ul><li>같은 파티션에 속한 여러 작은 파일들을 <strong>합치거나(bin-packing)</strong>,</li><li>큰 파일이라도 <strong>행 순서를 재배치(Z-curve)</strong>하면서 다시 씁니다.</li><li>즉, <em>“파일 재구성 + 행 재배치”</em> 단계가 동시 발생.</li></ul><p><strong>3/ Row Group 최적화</strong></p><ul><li>min/max 범위가 좁아져, file skipping강화됨</li></ul><h4><strong>그림</strong></h4>
 ```text
 ## _before (date_ym = 2025-09/)
 ├─ part-00001.parquet (KR/US/DE 섞임)
@@ -47,7 +47,7 @@ part-00021.parquet (DV 반영, 정리 완료)
 │   RowGroup3: DE 사용자 모음
 ```
 
-<h4>요약</h4><ul><li>Z-Order는 <strong>파티션을 건드리지 않는다</strong>.</li><li>파티션 내부에서 <strong>파일 병합 + 행(Row Group) 재배치</strong>를 수행한다.</li><li>따라서, 여러 파일을 <strong>재구성(합치거나 나누기)</strong> 하면서, 각 파일 안의 Row Group 순서를 최적화한다.</li></ul><h4><strong>운영 팁</strong></h4><ul><li>2~3개 주요 조회 조건 컬럼을 선정</li><li>Equality보다는 Range 필터에 효과</li><li>비용이 크므로, 핵심 테이블 위주로 사용</li></ul><h3>4) Bloom Filter Index</h3><h4><strong>개념</strong></h4><p>특정 값이 <strong>“존재하지 않음” </strong>을 빠르게 확인해, 불필요한 파일 읽기를 줄이는 확률적 인덱스.</p><h4><strong>특징</strong></h4><ul><li>High-cardinality 컬럼(user_id, device_id 등)에 적합</li><li>_delta_index/에 인덱스파일 생성됨</li><li>False Positive 확률(fpp) 조정 가능</li><li>Equality 조회 성능 최적화</li></ul><h4><strong>그림</strong></h4>
+<h4>요약</h4><ul><li>Z-Order는 <strong>파티션을 건드리지 않는다</strong>.</li><li>파티션 내부에서 <strong>파일 병합 + 행(Row Group) 재배치</strong>를 수행한다.</li><li>따라서, 여러 파일을 <strong>재구성(합치거나 나누기)</strong> 하면서, 각 파일 안의 Row Group 순서를 최적화한다.</li></ul><h4><strong>운영 팁</strong></h4><ul><li>2~3개 주요 조회 조건 컬럼을 선정</li><li>Equality와 Range 필터 모두 실제 조회 조건으로 효과를 확인</li><li>비용이 크므로, 핵심 테이블 위주로 사용</li></ul><h3>4) Bloom Filter Index</h3><h4><strong>개념</strong></h4><p>특정 값이 <strong>“존재하지 않음” </strong>을 빠르게 확인해, 불필요한 파일 읽기를 줄이는 확률적 인덱스.</p><h4><strong>특징</strong></h4><ul><li>High-cardinality 컬럼(user_id, device_id 등)에 적합</li><li>_delta_index/에 인덱스파일 생성됨</li><li>False Positive 확률(fpp) 조정 가능</li><li>Equality 조회 성능 최적화</li></ul><h4><strong>그림</strong></h4>
 ```text
 /table_root/
 ├─ _delta_log/

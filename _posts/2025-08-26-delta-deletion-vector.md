@@ -26,7 +26,7 @@ Parquet File
 
 * G: DV로 삭제 표시됨 → 쿼리 시 무시됨
 ```
-<h3>3. Delta Log와 DV 파일 예시</h3><p>삭제가 발생하면 Delta Table에는 <strong>두 가지 변화</strong>가 생깁니다.</p><ol><li>_delta_log JSON에 <strong>remove / add 액션</strong>이 기록됨</li><li>별도의 <strong>Deletion Vector 파일(.dv)</strong> 이 생성되어 삭제된 Row ID를 보관</li></ol><h4>🖼 동작 다이어그램</h4>
+<h3>3. Delta Log와 DV 파일 예시</h3><p>아래는 DV를 별도의 .bin 파일에 저장하는 경우의 예시입니다. 로그 안에 직접 저장하는 인라인 방식도 지원합니다.</p><p>삭제가 발생하면 Delta Table에는 <strong>두 가지 변화</strong>가 생깁니다.</p><ol><li>_delta_log JSON에 <strong>remove / add 액션</strong>이 기록됨</li><li>별도의 <strong>Deletion Vector 파일(.bin)</strong> 이 생성되어 삭제된 Row ID를 보관</li></ol><h4>🖼 동작 다이어그램</h4>
 ```text
 삭제 요청 →
   _delta_log JSON 업데이트
@@ -62,14 +62,14 @@ tables/
   }
 }
 ```
-<p><strong>add 액션 (DV 정보 포함)</strong></p><p>_delta_log의 add 액션 안에서 DV 파일을 참조합니다.</p>
+<p><strong>add 액션 (DV 정보 포함)</strong></p><p>_delta_log의 add 액션 안에서 DV 파일을 참조합니다. 아래는 DV 관련 필드만 발췌한 예시이며, storageType이 p이므로 파일의 절대 경로를 사용합니다.</p>
 ```json
 {
   "add": {
     "path": "01/part-00000-54b2c529-...parquet",
     "deletionVector": {
-      "storageType": "u",
-      "pathOrInlineDv": "deletion_vector_0014c02e-c8c8-498a-b9f4-ac4774167a7b.bin",
+      "storageType": "p",
+      "pathOrInlineDv": "s3://example-bucket/tables/delta-table/deletion_vector_0014c02e-c8c8-498a-b9f4-ac4774167a7b.bin",
       "offset": 85,
       "sizeInBytes": 34,
       "cardinality": 1
@@ -77,4 +77,22 @@ tables/
   }
 }
 ```
-<ul><li><strong>pathOrInlineDv</strong>: DV가 저장된 파일 경로 (또는 인라인 데이터)</li><li><strong>sizeInBytes</strong>: DV 파일 크기</li><li><strong>cardinality</strong>: 삭제된 Row 수</li></ul><h3>4. DV의 장점과 주의점</h3><h4>장점</h4><ul><li>빠른 삭제/업데이트 처리</li><li>불필요한 Parquet 파일 재작성 최소화</li><li>쿼리 시점에만 삭제된 행을 제외</li></ul><h4>주의점</h4><ul><li>DV가 누적되면, 여전히 파일 재작성(Reorg, Optimize)이 필요</li><li>DV를 관리하는 메타데이터 크기가 커지면 성능 저하 가능</li><li>결국 장기적으로는 Vacuum/Optimize로 물리적 정리 필수</li></ul><h3>5. 운영 전략</h3><p>실제 운영 환경에서 DV를 관리하려면 다음이 필요합니다.</p><ol><li><strong>DV 모니터링</strong></li></ol><ul><li>DESCRIBE DETAIL로 DV 사용 여부 확인</li><li>일정 기준 이상이면 정리 작업 수행</li></ul><p><strong>2. Reorg / Optimize</strong></p><ul><li>DV가 많은 파일은 강제 재작성(Reorg)</li><li>Optimize(Z-Order, Bin-Packing)로 병합 및 정렬</li></ul><p><strong>3. Vacuum 실행</strong></p><ul><li>참조되지 않는 파일을 물리적으로 삭제</li><li>Retention 기간을 운영 정책에 맞게 조정</li></ul><p><strong>4. 스토리지 모니터링</strong></p><ul><li>DV만으로는 스토리지 용량이 바로 줄지 않음</li><li>Optimize &amp; Vacuum 후에야 실제 반영</li></ul><h3>6. 마무리</h3><p>Deletion Vector는 Delta Table이 대규모 분산 환경에서<br><strong>효율적인 삭제와 업데이트</strong>를 가능하게 하는 핵심 기술입니다.</p><p>하지만 DV가 쌓이기만 하면 성능이 떨어지므로,<br><strong>Reorg, Optimize, Vacuum</strong>과 함께 관리해야 합니다.</p><p>다음 글에서는 Delta Table의 <strong>Optimize 전략<br></strong>(Bin-Packing, Z-Order, Reorg, Vacuum)을 구체적으로 다루겠습니다.</p><h3>참고자료</h3><ul><li><a href="https://delta.io/blog/2023-07-05-deletion-vectors/">Delta Lake Deletion Vectors 공식 블로그</a></li><li><a href="https://docs.databricks.com/en/delta/deletion-vectors.html">Databricks Documentation: Deletion Vectors</a></li></ul><h4>💡 운영 인사이트</h4><blockquote><em>실제 운영 환경에서 우리는 </em><strong><em>매일 데이터를 삭제</em></strong><em>해야 하기 때문에 DV 관련 실험을 자주 해왔습니다.</em></blockquote><blockquote><em>그 과정에서 얻은 교훈을 정리하면 다음과 같습니다:</em></blockquote><blockquote><strong>(1) DV와 스토리지 용량<br> — </strong>DV가 누적돼도 S3의 실제 사용량은 바로 줄지 않습니다.<br> — 새로운 파일이 생성되어, 참조가 교체돼야 Vacuum 대상이 됩니다.<br> — 따라서 DV 모니터링 + Optimize/Vacuum 조합이 핵심입니다.</blockquote><blockquote><strong>(2) Optimize 전략<br> — </strong>Optimize를 전체 기간에 걸기보다, 특정 기간(eg. 최근 7일)으로 범위를 좁히면 병합이 더 잘되는 경향을 보였습니다.</blockquote><blockquote><strong>(3) DV 개수 모니터링<br> — </strong>DESCRIBE DETAIL &lt;table&gt;로 DV 개수를 확인할 수 있습니다.<br> — DV가 일정 기준 이상 쌓이면 Reorg나 Optimize를 트리거하는 자동화를 두는 것도 고려해볼만 한 것 같습니다.</blockquote>
+<ul><li><strong>pathOrInlineDv</strong>: DV가 저장된 파일 경로 (또는 인라인 데이터)</li><li><strong>sizeInBytes</strong>: 해당 DV의 직렬화된 크기(바이트)</li><li><strong>cardinality</strong>: 삭제된 Row 수</li></ul><h3>4. DV의 장점과 주의점</h3><h4>장점</h4><ul><li>빠른 삭제/업데이트 처리</li><li>불필요한 Parquet 파일 재작성 최소화</li><li>쿼리 시점에만 삭제된 행을 제외</li></ul><h4>주의점</h4><ul><li>DV가 누적되면, 여전히 파일 재작성(Reorg, Optimize)이 필요</li><li>DV를 관리하는 메타데이터 크기가 커지면 성능 저하 가능</li><li>결국 장기적으로는 Vacuum/Optimize로 물리적 정리 필수</li></ul>
+
+<h4>논리적 삭제부터 공간 회수까지</h4>
+
+```text
+① DV로 논리적 삭제
+   조회 결과에서는 제외되지만 원본 파일은 남아 있음
+                  ↓
+② REORG … APPLY (PURGE)
+   삭제된 행을 제외한 새 파일 작성
+   이전 파일은 아직 스토리지에 남아 있음
+                  ↓
+③ 보존 기간 충족 후 VACUUM
+   이전 파일을 물리적으로 삭제 → 공간 회수
+```
+
+<p>이 그림은 삭제 데이터의 물리적 정리 절차를 설명하며, 모든 테이블에 정기적인 REORG 실행을 권장하는 것은 아닙니다.</p>
+
+<h3>5. 운영 전략</h3><p>실제 운영 환경에서 DV를 관리하려면 다음이 필요합니다.</p><ol><li><strong>DV 모니터링</strong></li></ol><ul><li>DESCRIBE DETAIL로 DV 사용 여부 확인</li><li>일정 기준 이상이면 정리 작업 수행</li></ul><p><strong>2. Reorg / Optimize</strong></p><ul><li>DV가 많은 파일은 강제 재작성(Reorg)</li><li>Optimize(Z-Order, Bin-Packing)로 병합 및 정렬</li></ul><p><strong>3. Vacuum 실행</strong></p><ul><li>참조되지 않는 파일을 물리적으로 삭제</li><li>Retention 기간을 운영 정책에 맞게 조정</li></ul><p><strong>4. 스토리지 모니터링</strong></p><ul><li>DV만으로는 스토리지 용량이 바로 줄지 않음</li><li>Optimize &amp; Vacuum 후에야 실제 반영</li></ul><h3>6. 마무리</h3><p>Deletion Vector는 Delta Table이 대규모 분산 환경에서<br><strong>효율적인 삭제와 업데이트</strong>를 가능하게 하는 핵심 기술입니다.</p><p>하지만 DV가 쌓이기만 하면 성능이 떨어지므로,<br><strong>Reorg, Optimize, Vacuum</strong>과 함께 관리해야 합니다.</p><p>다음 글에서는 Delta Table의 <strong>Optimize 전략<br></strong>(Bin-Packing, Z-Order, Reorg, Vacuum)을 구체적으로 다루겠습니다.</p><h3>참고자료</h3><ul><li><a href="https://delta.io/blog/2023-07-05-deletion-vectors/">Delta Lake Deletion Vectors 공식 블로그</a></li><li><a href="https://docs.databricks.com/en/delta/deletion-vectors.html">Databricks Documentation: Deletion Vectors</a></li></ul><h4>💡 운영 인사이트</h4><blockquote><em>실제 운영 환경에서 우리는 </em><strong><em>매일 데이터를 삭제</em></strong><em>해야 하기 때문에 DV 관련 실험을 자주 해왔습니다.</em></blockquote><blockquote><em>그 과정에서 얻은 교훈을 정리하면 다음과 같습니다:</em></blockquote><blockquote><strong>(1) DV와 스토리지 용량<br> — </strong>DV가 누적돼도 S3의 실제 사용량은 바로 줄지 않습니다.<br> — 새로운 파일이 생성되어, 참조가 교체돼야 Vacuum 대상이 됩니다.<br> — 따라서 DV 모니터링 + Optimize/Vacuum 조합이 핵심입니다.</blockquote><blockquote><strong>(2) Optimize 전략<br> — </strong>Optimize를 전체 기간에 걸기보다, 특정 기간(eg. 최근 7일)으로 범위를 좁히면 병합이 더 잘되는 경향을 보였습니다.</blockquote><blockquote><strong>(3) DV 개수 모니터링<br> — </strong>DESCRIBE DETAIL &lt;table&gt;로 DV 개수를 확인할 수 있습니다.<br> — DV가 일정 기준 이상 쌓이면 Reorg나 Optimize를 트리거하는 자동화를 두는 것도 고려해볼만 한 것 같습니다.</blockquote>
