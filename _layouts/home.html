@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+{% assign cases = site.categories['실무 사례·의사결정'] | where_exp: 'post', 'post.hidden != true' %}
+{% assign notes = site.categories['개념 노트'] | where_exp: 'post', 'post.hidden != true' %}
+
+<header class="writing-intro">
+  <p class="writing-eyebrow">데이터 플랫폼을 만들고 운영하며</p>
+  <h1>경험에서 판단을, 공부에서 기본기를.</h1>
+  <p>업무의 문제를 해결한 과정과 그 바탕이 되는 개념을 기록합니다.</p>
+  <nav class="writing-paths" aria-label="글의 종류">
+    <a href="{{ '/cases/' | relative_url }}">실무 사례·의사결정 <span aria-hidden="true">↗</span></a>
+    <a href="{{ '/notes/' | relative_url }}">개념 노트 <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<section class="writing-section" aria-labelledby="cases-heading">
+  <div class="writing-section-heading">
+    <h2 id="cases-heading">실무 사례·의사결정</h2>
+    <a href="{{ '/cases/' | relative_url }}">전체 보기 <span aria-hidden="true">→</span></a>
+  </div>
+  <p class="writing-description">어떤 문제를 만났고, 왜 그 방법을 골랐으며, 결과는 어땠는지.</p>
+  <div class="case-list">
+    {% for post in cases limit: 3 %}
+      <article class="case-card">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <p>{{ post.description | default: post.subtitle | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
+        <a class="case-read-link" href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }} 읽기">사례 읽기 <span aria-hidden="true">→</span></a>
+      </article>
+    {% else %}
+      <p class="writing-description">사례를 정리하고 있습니다.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="writing-section notes-section" aria-labelledby="notes-heading">
+  <div class="writing-section-heading">
+    <h2 id="notes-heading">개념 노트</h2>
+    <a href="{{ '/notes/' | relative_url }}">전체 보기 <span aria-hidden="true">→</span></a>
+  </div>
+  <p class="writing-description">개념 하나씩, 예시와 주의점을 곁들여 쌓아가는 공부 기록.</p>
+  <ul class="note-list">
+    {% for post in notes limit: 6 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+      </li>
+    {% else %}
+      <li>첫 개념 노트를 준비하고 있습니다.</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<p class="writing-archive-link"><a href="{{ '/archives/' | relative_url }}">날짜순으로 모든 글 보기 <span aria-hidden="true">→</span></a></p>

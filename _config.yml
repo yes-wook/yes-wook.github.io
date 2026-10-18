@@ -43,7 +43,8 @@ comments:
     lang: ko
     reactions_enabled: "1"
 
-paginate: 10
+# The home page has separate case and concept-note lists.
+# Full lists live at /cases/, /notes/, and /archives/.
 
 kramdown:
   syntax_highlighter: rouge
@@ -90,6 +91,7 @@ defaults:
 
 exclude:
   - _archive
+  - WRITING.md
   - Gemfile
   - Gemfile.lock
   - node_modules

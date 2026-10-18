@@ -1,4 +1,5 @@
 ---
+categories: ["개념 노트"]
 title: "Parquet와 Delta Table: 배경과 아키텍처이해하기"
 subtitle: "Parquet와 Delta Table의 구조와 동작 원리"
 tags: [Parquet, Delta Lake, Databricks, Data Engineering]

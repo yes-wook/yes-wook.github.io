@@ -1,4 +1,5 @@
 ---
+categories: ["실무 사례·의사결정"]
 title: "Delta Lake Bloom Filter: 적용보다 제거가 나았던 이유"
 subtitle: "성능 기능은 적용보다 재검증과 제거 기준이 중요하다"
 tags: [Delta Lake, Databricks, Photon, Optimization]
