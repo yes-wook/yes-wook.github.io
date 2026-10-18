@@ -3,7 +3,7 @@ layout: writing-list
 title: 개념 노트
 permalink: /notes/
 icon: fas fa-book-open
-order: 2
+order: 1
 writing_category: 개념 노트
 ---
 

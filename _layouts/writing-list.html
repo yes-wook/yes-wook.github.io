@@ -5,7 +5,7 @@ layout: page
 {{ content }}
 
 {% assign posts = site.categories[page.writing_category] | where_exp: 'post', 'post.hidden != true' %}
-{% if page.writing_category == '실무 사례·의사결정' %}
+{% if page.writing_category == '실무 사례' %}
   <div class="case-list writing-index">
     {% for post in posts %}
       <article class="case-card">
@@ -25,7 +25,7 @@ layout: page
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
       </li>
     {% else %}
-      <li>첫 개념 노트를 준비하고 있습니다.</li>
+      <li>글을 정리하고 있습니다.</li>
     {% endfor %}
   </ul>
 {% endif %}

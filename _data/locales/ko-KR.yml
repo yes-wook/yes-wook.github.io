@@ -15,9 +15,10 @@ tabs:
   tags: 태그
   archives: 아카이브
   about: 정보
-  cases: 실무 사례·의사결정
+  cases: 실무 사례
   notes: 개념 노트
-  "실무 사례·의사결정": 실무 사례·의사결정
+  etc: ETC
+  "실무 사례": 실무 사례
   "개념 노트": 개념 노트
 
 # the text displayed in the search bar & search results

@@ -3,22 +3,24 @@ layout: default
 ---
 
 {% include lang.html %}
-{% assign cases = site.categories['실무 사례·의사결정'] | where_exp: 'post', 'post.hidden != true' %}
+{% assign cases = site.categories['실무 사례'] | where_exp: 'post', 'post.hidden != true' %}
+{% assign etc_posts = site.categories['ETC'] | where_exp: 'post', 'post.hidden != true' %}
 {% assign notes = site.categories['개념 노트'] | where_exp: 'post', 'post.hidden != true' %}
 
 <header class="writing-intro">
   <p class="writing-eyebrow">데이터 플랫폼을 만들고 운영하며</p>
-  <h1>경험에서 판단을, 공부에서 기본기를.</h1>
-  <p>업무의 문제를 해결한 과정과 그 바탕이 되는 개념을 기록합니다.</p>
+  <h1>일하고, 배우고, 기록합니다.</h1>
+  <p>실무에서 겪은 일과 공부한 개념, 그 밖의 관심사를 기록합니다.</p>
   <nav class="writing-paths" aria-label="글의 종류">
-    <a href="{{ '/cases/' | relative_url }}">실무 사례·의사결정 <span aria-hidden="true">↗</span></a>
     <a href="{{ '/notes/' | relative_url }}">개념 노트 <span aria-hidden="true">↗</span></a>
+    <a href="{{ '/cases/' | relative_url }}">실무 사례 <span aria-hidden="true">↗</span></a>
+    <a href="{{ '/etc/' | relative_url }}">ETC <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
 
 <section class="writing-section" aria-labelledby="cases-heading">
   <div class="writing-section-heading">
-    <h2 id="cases-heading">실무 사례·의사결정</h2>
+    <h2 id="cases-heading">실무 사례</h2>
     <a href="{{ '/cases/' | relative_url }}">전체 보기 <span aria-hidden="true">→</span></a>
   </div>
   <p class="writing-description">어떤 문제를 만났고, 왜 그 방법을 골랐으며, 결과는 어땠는지.</p>
@@ -50,6 +52,24 @@ layout: default
       </li>
     {% else %}
       <li>첫 개념 노트를 준비하고 있습니다.</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="writing-section" aria-labelledby="etc-heading">
+  <div class="writing-section-heading">
+    <h2 id="etc-heading">ETC</h2>
+    <a href="{{ '/etc/' | relative_url }}">전체 보기 <span aria-hidden="true">→</span></a>
+  </div>
+  <p class="writing-description">동향 조사와 회고, 그 밖의 관심사.</p>
+  <ul class="note-list">
+    {% for post in etc_posts limit: 3 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+      </li>
+    {% else %}
+      <li>글을 정리하고 있습니다.</li>
     {% endfor %}
   </ul>
 </section>
